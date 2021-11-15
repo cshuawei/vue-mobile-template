@@ -23,5 +23,9 @@
     "vant",
     "mobile"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cshuawei/vue-mobile-template.git"
+  },
   "license": "MIT"
 }
