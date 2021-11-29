@@ -1,5 +1,6 @@
-<script setup>
+<script lang="ts" setup>
 import { ref } from 'vue'
+import { ux } from '@/common'
 
 defineProps({
   msg: String
