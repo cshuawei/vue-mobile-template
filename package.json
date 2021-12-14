@@ -1,5 +1,5 @@
 {
-  "name": "como-template",
+  "name": "vue-mobile",
   "version": "0.1.0",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,8 @@
   "dependencies": {
     "axios": "^0.24.0",
     "vant": "^3.2.8",
-    "vue": "^3.2.16"
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@types/node": "^16.11.10",
@@ -25,20 +26,16 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0",
     "postcss-pxtorem": "^5.1.1",
+    "sass": "^1.43.5",
     "typescript": "^4.5.2",
     "vite": "^2.6.4"
   },
-  "description": "Blockchain client",
-  "author": "chenshuai",
+  "author": "como",
   "keywords": [
     "typescript",
     "javascript",
     "vant",
     "mobile"
   ],
-  "repository": {
-    "type": "git",
-    "url": "http://172.16.10.101:90/gov-affairs-commerces/Blockchain-user-front.git"
-  },
   "license": "MIT"
 }

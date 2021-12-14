@@ -10,7 +10,8 @@ const $util = {
    * @param key 键名称
    * @param value 键值
    */
-  storage (type: Util.StorageType, action: Util.StorageAction, key: string, value?: string): void {
+  storage (type: Util.StorageType, action: Util.StorageAction, key: string, ...args: Util.StorageArgs): void {
+    const [value] = args
     if (type === 'local') {
       if (action === 'set') {
         window.localStorage.setItem(key, value || '')
@@ -48,6 +49,32 @@ const $util = {
       }
     }, 1000)
   },
+  /**
+   * 信息脱敏处理
+   * @param str 需要脱敏的源数据，如果是number类型则会被转为string类型
+   * @param startLen 起始长度
+   * @param endLen 结束长度
+   */
+  desen (str: string | number, startLen: number, endLen: number) {
+    const toStr = str + ''
+    let len = toStr.length - startLen - endLen
+    let xin = ''
+    while (len > 0) {
+      xin += '*'
+      len--
+    }
+    return `${toStr.substring(0, startLen)}${xin}${toStr.substring(toStr.length - endLen)}`
+  },
+  /**
+   * 相对路径图片资源解析为完整URL
+   * @param path 图片相对路径
+   */
+  getImageUrl (path: string) {
+    const url = import.meta.url
+    const endLen = url.indexOf('/src/')
+    const toPath = path.replace(/@\//, 'src/')
+    return new URL(toPath, url.substring(0, endLen)).href
+  }
 }
 
 export default $util

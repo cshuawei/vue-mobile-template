@@ -1,5 +1,11 @@
-import ux from './ux'
+import $ux from './ux'
+import $util from './util'
+import $http from './http'
+import $pattern from './pattern'
 
 export {
-  ux
+  $ux,
+  $util,
+  $http,
+  $pattern
 }
